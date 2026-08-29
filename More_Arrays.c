@@ -20,6 +20,9 @@ void teach(int book[3][4]);
 void highest(int book[3][4]);
 void avr_student(int book[3][4]);
 void avr_test(int book[3][4]);
+void first_student(int book[3][4]);
+void second_all(int book[3][4]);
+void final(int book[3][4]);
 
 int main()
 {
@@ -29,6 +32,9 @@ int main()
     highest(book);
     avr_student(book);
     avr_test(book);
+    first_student(book);
+    second_all(book);
+    final(book);
 
     return 0;
 }
@@ -105,5 +111,43 @@ void avr_test(int book[3][4])
         }
 
         printf("Grade %d Average Score: \t%.2f\n", grade + 1, sum / 3.0);
+    }
+}
+
+void first_student(int book[3][4])
+{
+    printf("\n---Grades for Student 1---\n");
+    printf("Student 1 Grades: ");
+
+    for(int grade = 0; grade < 4; grade++)
+        {
+            printf("%d\t", book[0][grade]);
+        }
+}
+
+void second_all(int book[3][4])
+{
+    printf("\n---Second Grade for All Students--\n");
+
+    for(int student = 0; student < 3; student++)
+    {
+        printf("Student %d: %d\t\n", student + 1, book[student][1]);
+    }
+}
+
+void final(int book[3][4])
+{
+    printf("\n---Grades for All Students---\n");
+
+    for(int student = 0; student < 3; student++)
+    {
+        printf("Student %d:\t", student + 1);
+
+        for(int grade = 0; grade < 4; grade++)
+        {
+            printf("%d\t", book[student][grade]);
+        }
+
+        printf("\n");
     }
 }
