@@ -11,6 +11,7 @@ sorted sales amounts. Calculates the median sales value.
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void fill(float retail[], int size);
 void sort(float retail[], int size);
@@ -26,7 +27,10 @@ int main()
     display(retail, 7);
     median(retail, 7);
 
+    printf("\n");
+    system("pause");
 
+    return 0;
 }
 
 void fill(float retail[], int size)
