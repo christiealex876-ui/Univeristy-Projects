@@ -72,7 +72,6 @@ void highest(int book[3][4])
 
 void avr_student(int book[3][4])
 {
-    int avr = 0;
     int sum = 0;
 
     printf("---Average Grade Per Student---\n");
@@ -86,13 +85,12 @@ void avr_student(int book[3][4])
             sum += book[student][grade];
         }
 
-        printf("Student %d Average Grade: \t%.f\n", student + 1, sum / 4.0);
+        printf("Student %d Average Grade: \t%.2f\n", student + 1, sum / 4.0);
     }
 }
 
 void avr_test(int book[3][4])
 {
-    int avr = 0;
     int sum = 0;
 
     printf("\n---Average Test Scores---\n");
@@ -103,7 +101,7 @@ void avr_test(int book[3][4])
 
         for(int student = 0; student < 3; student++)
         {
-            sum += book[grade][student];
+            sum += book[student][grade];
         }
 
         printf("Grade %d Average Score: \t%.2f\n", grade + 1, sum / 3.0);
