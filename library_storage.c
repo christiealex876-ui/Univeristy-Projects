@@ -13,6 +13,7 @@ Counts and displays the number of swaps performed.
 #include <stdio.h>
 #include <stdlib.h>
 
+
 void library(int id[], int size);
 void sort(int id[], int size);
 void display(int id[], int size);
@@ -67,6 +68,6 @@ void display(int id[], int size)
 
     for(int i = 0; i < size; i++)
     {
-        printf("ID %d: %d\n", i + 1, id[i]);
+        printf("ID %d: \t%d\n", i + 1, id[i]);
     }
 }
