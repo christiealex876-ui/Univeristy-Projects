@@ -13,45 +13,60 @@ Counts and displays the number of swaps performed.
 #include <stdio.h>
 #include <stdlib.h>
 
-int library(int id[], int size);
-int sort(int id[], int size);
+void library(int id[], int size);
+void sort(int id[], int size);
+void display(int id[], int size);
 
 int main()
 {
     int id[10];
 
     library(id, 10);
+    sort(id, 10);
+    display(id, 10);
 
 
     system("pause");
     return 0;
 }
 
-int library(int id[], int size)
+void library(int id[], int size)
 {
     for(int count = 0; count < size; count++)
     {
         printf("ID %d: ", count + 1);
-        scanf("%f", &id[count]);
+        scanf("%d", &id[count]);
     }
 }
 
-int sort(int id[], int size)
+void sort(int id[], int size)
 {
     int swap_count = 0, temp = 0;
 
     for(int count = 0; count < size; count++)
     {
-        for(int i = 0; size - i - 2; i++)
+        for(int i = 0; i <= size - count - 2; i++)
         {
             if(id[i] > id[i + 1])
             {
                 temp = id[i];
                 id[i] = id[i + 1];
-                temp = id[i + 1];
+                id[i + 1] = temp;
                 
                 swap_count++;
             }
         }
+    }
+
+    printf("\nTotal Number of Swaps Performed: %d\n", swap_count);
+}
+
+void display(int id[], int size)
+{
+    printf("\n---Student IDs In Ascending Order---\n");
+
+    for(int i = 0; i < size; i++)
+    {
+        printf("ID %d: %d\n", i + 1, id[i]);
     }
 }
